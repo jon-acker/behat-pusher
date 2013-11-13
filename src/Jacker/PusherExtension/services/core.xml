@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="jacker.pusher_extension.pusher" class="Jacker\PusherExtension\Pusher">
+        </service>
+
+        <service id="pusher.context.initializer" class="Jacker\PusherExtension\PusherAwareInitializer">
+            <argument type="service" id="jacker.pusher_extension.pusher" />
+            <tag name="behat.context.initializer" />
+        </service>
+
+        <service id="behat.mink.listener.sessions_listener" class="Jacker\PusherExtension\Listeners\StepListener">
+            <argument type="service" id="jacker.pusher_extension.pusher" />
+            <tag name="behat.event_subscriber" priority="0" />
+        </service>
+
+    </services>
+
+</container>

@@ -1,0 +1,17 @@
+{
+    "autoload": {
+        "psr-0": { "": ["src/", "features/"], "spec": [""]  }
+    },
+    "require-dev": {
+        "behat/behat": "~2.4",
+        "behat/mink-extension": "*",
+        "behat/mink-browserkit-driver": "*",
+        "behat/mink-goutte-driver": "*",
+        "behat/mink-selenium2-driver":  "*",
+        "sensiolabs/behat-page-object-extension": "~1.0"
+    },    
+    "config": {
+        "bin-dir": "bin"
+    },
+    "include-path": ["/src"]
+}
